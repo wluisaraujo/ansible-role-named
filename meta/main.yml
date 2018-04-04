@@ -1,0 +1,28 @@
+laxy_info:
+  author: w.luis.araujo
+  description: Configure Named (DNS) server
+  company: Personal
+  license: license (GPLv3)
+
+  min_ansible_version: 2
+
+  platforms:
+   - name: EL
+     versions:
+     - all
+
+   - name: Debian
+     versions:
+     - all
+
+  galaxy_tags: 
+     - Named
+     - Bind
+     - DNS Server
+ 
+  dependencies: []
+
+  categories: 
+     - DNS Server
+     - Named
+     - Bind
