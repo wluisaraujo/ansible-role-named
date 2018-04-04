@@ -23,6 +23,6 @@ laxy_info:
   dependencies: []
 
   categories: 
-     - DNS Server
      - Named
      - Bind
+     - DNS Server
