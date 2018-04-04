@@ -17,11 +17,11 @@ galaxy_info:
   galaxy_tags: 
      - Named
      - Bind
-     - DNS Server
+     - DnsServer
  
   dependencies: []
 
   categories: 
      - named
      - bind
-     - dns-server
+     - dns
