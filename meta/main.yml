@@ -22,6 +22,6 @@ galaxy_info:
   dependencies: []
 
   categories: 
-     - Named
-     - Bind
-     - DNS Server
+     - named
+     - bind
+     - dns-server
