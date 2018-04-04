@@ -1,4 +1,4 @@
-laxy_info:
+galaxy_info:
   author: w.luis.araujo
   description: Configure Named (DNS) server
   company: Personal
@@ -10,7 +10,6 @@ laxy_info:
    - name: EL
      versions:
      - all
-
    - name: Debian
      versions:
      - all
