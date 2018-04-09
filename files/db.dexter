@@ -1,36 +1,54 @@
 $TTL 86400      		            ; Tempo em Segundos que o Cache ira permanecer nos DNS do Mundo 
-@       	      IN              SOA     ns1.dexter.com.br.  root.dexter.com.br. (
+@       	        IN              SOA     ns1.dexter.com.br.  root.dexter.com.br. (
                 2018030601      ; serial 
                 8h              ; refresh 
                 1h              ; retry 
                 3d              ; expire 
                 3h )            ; negative caching ttl 
 ;; Configuração do DNS primário
-@               IN              NS      ns1.dexter.com.br.
-ns1             IN              A       192.168.200.30
+@                 IN              NS      ns1.dexter.com.br.
+ns1               IN              A       192.168.200.30
 
 ;; Configuração do DNS secundário 
-@         	IN        	NS      ns2.dexter.com.br.
-ns2       	IN        	A       192.168.200.130
+@         	      IN        	NS      ns2.dexter.com.br.
+ns2       	      IN        	A       192.168.200.130
 
 ;; Entrada Global para WebServerCloud
-@               IN              A       192.168.200.130
+@                 IN              A       192.168.200.130
 
 ;; Coloque O Ip do Web Server Cloud   
-;www             IN              A       X.X.X.X
-intranet        IN              A       192.168.200.130
+;www              IN              A       X.X.X.X
+intranet          IN              A       192.168.200.130
 
 ;; Entrada Global para MailServer
-@               IN              MX      10 mail.dexter.com.br.
+@                 IN              MX      10 mail.dexter.com.br.
 
+audit		          IN		          A	      192.168.200.30
+datacenter	      IN		          A	      192.168.200.131
+fileserver	      IN		          A	      192.168.200.40
+mail              IN              A       192.168.200.131
+security	        IN		          A	      192.168.200.1
+storage		        IN		          A	      192.168.200.50
+vpn		            IN		          A	      200.100.50.99	
+webserverinterno  IN		          A 	    192.168.200.130
 ;;
-
-
-
-
-
-
-
-
-
-
+backup            IN              CNAME   webserverinterno
+bkpreport         IN              CNAME   webserverinterno
+dhcp		          IN		          CNAME	  audit
+firewall	        IN		          CNAME	  security
+ftp               IN              CNAME   webserverinterno
+gateway		        IN		          CNAME	  security
+imap              IN              CNAME   audit 
+intranet	        IN		          CNAME   webserverinterno
+ldap              IN              CNAME   datacenter
+nfs		            IN		          CNAME	  storage
+ntp		            IN 		          CNAME	  audit
+pop               IN              CNAME   audit 
+proxy		          IN		          CNAME	  security
+rsyslog		        IN		          CNAME	  audit
+sarg              IN              CNAME   webserverinterno
+smtp              IN              CNAME   audit 
+squidanalyzer	    IN		          CNAME	  webserverinterno
+squid		          IN		          CNAME	  security
+squidreport       IN		          CNAME	  webserverinterno
+webmail           IN              CNAME   webserverinterno
