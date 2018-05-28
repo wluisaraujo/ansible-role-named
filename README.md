@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/wluisaraujo/iac-ansible-named-server.svg?branch=master)](https://travis-ci.org/wluisaraujo/iac-ansible-named-server)
+---
 # IaC: Iac: with Ansible for Named Server
 
 ## Apresentação
