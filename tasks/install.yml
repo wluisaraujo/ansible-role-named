@@ -2,14 +2,15 @@
 # tasks file for iac-ansible-named-server
 
 - name: Instala servidor Bind9 (OS base Debian)
-  when: ansible_os_family == "Debian"
-  
-  apt: pkg={{item}} state=latest update_cache=true 
+  apt: 
+    name: {{item}} 
+    state: latest 
+    update_cache: true 
   with_items: 
           - bind9
-          #- bind9utils
-  
+          - bind9utils
   register: bind_installed
+  when: ansible_os_family == "Debian"
   notify:
     - Start Bind
 ...
