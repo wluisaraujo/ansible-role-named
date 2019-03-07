@@ -34,7 +34,7 @@ Example Playbook
     - name: value
   roles:
     - iac-ansible-named-server
-...	
+...
 ```
 
 License
