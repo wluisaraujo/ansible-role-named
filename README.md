@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/wluisaraujo/iac-ansible-named-server.svg?branch=master)](https://travis-ci.org/wluisaraujo/iac-ansible-named-server)
 ---
-# IaC: Iac: with Ansible for Named Server
+# IaC: Iac: with [Ansible](https://www.ansible.com) for Named Server
 
 ## Apresentação
 -----------
@@ -17,7 +17,7 @@
 
 * Status: Desenvolvimento
 
-License
+## License
 -------
 
 [GPLv3](https://www.gnu.org/licenses/gpl-3.0.pt-br.html)
