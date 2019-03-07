@@ -17,6 +17,11 @@
 
 * Status: Desenvolvimento
 
+License
+-------
+
+[GPLv3](https://www.gnu.org/licenses/gpl-3.0.pt-br.html)
+
 ## Author
 -----------
 
