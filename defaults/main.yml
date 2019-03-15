@@ -1,2 +1,3 @@
 ---
 # defaults file for iac-ansible-named-server
+service_name: bind9
