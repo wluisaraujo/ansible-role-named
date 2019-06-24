@@ -1,4 +1,5 @@
 galaxy_info:
+  role_name: iac-ansible-named-server
   author: w.luis.araujo
   description: Configure Named (DNS) server
   company: LUSAR | wluisaraujo.github.io
