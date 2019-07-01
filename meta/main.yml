@@ -20,9 +20,9 @@ galaxy_info:
      - Bind
      - DnsServer
  
-  dependencies: []
-
   categories: 
      - named
      - bind
      - dns
+  
+  dependencies: []

@@ -5,7 +5,7 @@
       - server is defined
     quiet: true  
 
-# defaults file for tasks file for iac-ansible-named
+# defaults file for tasks file for named
 
 - name:  Instala pacotes Base (OS base Debian)
   import_tasks: server-install.yml

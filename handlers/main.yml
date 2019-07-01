@@ -1,5 +1,5 @@
 ---
-# handlers file for iac-ansible-named-server
+# handlers file for named
 ## SystemD
 - name: Start {{ service_name }}
   systemd:

@@ -1,5 +1,5 @@
 ---
-# tasks file for iac-ansible-named-server
+# tasks file for named
 
 - name: Instala servidor Bind9 (OS base Debian)
   apt: 
