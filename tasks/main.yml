@@ -1,14 +1,11 @@
 ---
-###########################################################
-### GO SERVER
 - assert:
-    msg: "Somente aplicado ao ambiente Linux"
+    msg: "Somente aplica para ambiente de servidores"
     that: 
-      - ansible_system == "Linux"
       - server is defined
     quiet: true  
 
-# defaults file for tasks file for iac-ansible-named-server
+# defaults file for tasks file for iac-ansible-named
 
 - name:  Instala pacotes Base (OS base Debian)
   import_tasks: server-install.yml
@@ -21,4 +18,22 @@
   when: 
     - ansible_os_family == "Debian"
     - server is defined
+##
+- assert:
+    msg: "Somente aplica para ambiente de servidores slave"
+    that: 
+      - slave is defined
+    quiet: true  
+
+- name:  Instala pacotes Base (OS base Debian)
+  import_tasks: slave-install.yml
+  when: 
+    - ansible_os_family == "Debian"
+    - server is defined
+  
+- name:  Configura o Serviço Bind (Os base Debian)
+  import_tasks: slave-configure.yml
+  when: 
+    - ansible_os_family == "Debian"
+    - slave is defined    
 ...
