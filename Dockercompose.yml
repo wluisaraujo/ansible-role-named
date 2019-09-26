@@ -16,7 +16,6 @@ services:
       - 8.8.8.8
     ports:
       - "53/udp:53/udp"
-      - "5001:5001"
     expose:
       - "53/udp"
       - "53/tcp"
