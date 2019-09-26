@@ -43,6 +43,14 @@ Example Playbook
     - named
 ...
 ```
+Example 2 Container
+----------------
+
+```console
+vagrant@localhost:~$ docker build .
+vagrant@localhost:~$
+vagrant@localhost:~$ docker run -dit --name my_server_bind9 wluisaraujo/bind9
+```
 
 ----------------
 [![Licence](https://img.shields.io/badge/License-GPL%20v3-red.svg)](https://www.gnu.org/licenses/gpl-3.0.pt-br.html)
