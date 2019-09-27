@@ -14,4 +14,5 @@ COPY files/db.dexter /var/cache/bind/db.dexter
 COPY files/rev.dexter /var/cache/bind/rev.dexter
 CMD service bind9 start
 
-EXPOSE 53/tcp 53/udp
+EXPOSE 53/tcp 
+EXPOSE 53/udp
