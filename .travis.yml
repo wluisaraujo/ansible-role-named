@@ -1,6 +1,6 @@
 ---
 language: python
-#python: "2.7"
+python: "2.7"
 
 # Use the new container infrastructure
 #sudo: true
@@ -8,51 +8,48 @@ language: python
 # This playbook need to run on Ubuntu 14.04 or later
 #dist: trust
 
-#services:
-# - docker
+services:
+ - docker
 
-#env:
-#  global:
-#    - ROLE_NAME: named
-#    - ANSIBLE_ACTION_WARNINGS: "False"
-#    - ANSIBLE_COMMAND_WARNINGS: "False"
-#    - ANSIBLE_DEPRECATION_WARNINGS: "False"
-#    - ANSIBLE_SYSTEM_WARNINGS: "False"
-#    - ANSIBLE_HOST_KEY_CHECKING: "False"
+env:
+  global:
+    - ROLE_NAME: named
+    - ANSIBLE_ACTION_WARNINGS: "False"
+    - ANSIBLE_COMMAND_WARNINGS: "False"
+    - ANSIBLE_DEPRECATION_WARNINGS: "False"
+    - ANSIBLE_SYSTEM_WARNINGS: "False"
+    - ANSIBLE_HOST_KEY_CHECKING: "False"
      
-# - distribution: centos
-#   version: 7
-# - distribution: fedora
-#   version: 30
-# - distribution: fedora
-#   version: 29  
-# - distribution: ubuntu
-#   version: bionic
-# - distribution: ubuntu
-#   version: xenial  
-# - distribution: debian
-#   version: buster
-# - distribution: debian
-#   version: stretch
+ - distribution: centos
+   version: 7
+ - distribution: fedora
+   version: 30
+ - distribution: ubuntu
+   version: bionic
+ - distribution: ubuntu
+   version: xenial  
+ - distribution: debian
+   version: buster
+ - distribution: debian
+   version: stretch
     
 # Install ansible
-#addons:
-# apt:
-# packages:
-# - python-pip
-#
-#install:
-# # Install ansible
-# - pip install ansible
+addons:
+ apt:
+ packages:
+ - python-pip
+install:
+# Install ansible
+ - pip install ansible
 #
 ## Check ansible version
-# - ansible --version
+ - ansible --version
 #
 ## Create ansible.cfg with correct roles_path
-# - printf '[defaults]\nroles_path=../' >ansible.cfg
+ - printf '[defaults]\nroles_path=../' >ansible.cfg
 #
-# # Install ansible role
-# - ansible-galaxy install wluisaraujo.named
+# Install ansible role
+ - ansible-galaxy install wluisaraujo.named
 #
 script:
 # Basic role syntax check
