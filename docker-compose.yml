@@ -1,0 +1,46 @@
+---
+version: '3.7'
+services:
+  named:
+    image: debian:latest
+    container_name: ns1
+    
+    restart: always
+#    network_mode: "host"
+    
+    domainname: dexter.com.br
+    hostname: ns1.dexter.com.br
+    dns_search: dexter.com.br
+
+    privileged: true
+    tty: true
+
+#    ipc: host
+    networks:
+          host:
+            ipv4_address: 172.17.100.201
+#networks:
+#      vpcbr:
+#        ipv4_address: 10.5.0.5
+    
+    dns:
+      - "127.0.0.1"
+      - "8.8.8.8"
+      - "8.8.4.4"
+    volumes:
+      - /etc/hosts:/etc/hosts
+      - /SCM/wluisaraujo/ansible-role-named:/opt/data
+#    ports:
+#      - "53/udp:53/udp"
+#      - "53/tcp:53/tcp"
+    expose:
+      - "53/udp"
+      - "53/tcp"
+
+    extra_hosts:
+#      - "balancer.dexter.com.br:172.16.238.1"  
+#      - "intranet.dexter.com.br:172.16.238.2"  
+#      - "ldap.dexter.com.br:172.16.238.3"  
+      - "ns1.dexter.com.br:172.17.0.201"  
+      - "proxy.dexter.com.br:172.17.238.5"
+...
