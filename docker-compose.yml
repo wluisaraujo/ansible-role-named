@@ -1,5 +1,5 @@
 ---
-version: '3.7'
+version: '3'
 services:
   named:
     image: debian:latest
@@ -15,13 +15,9 @@ services:
     privileged: true
     tty: true
 
-#    ipc: host
     networks:
-          host:
-            ipv4_address: 172.17.100.201
-#networks:
-#      vpcbr:
-#        ipv4_address: 10.5.0.5
+      - bridge:
+          ipv4_address: 172.17.100.201
     
     dns:
       - "127.0.0.1"
@@ -43,4 +39,9 @@ services:
 #      - "ldap.dexter.com.br:172.16.238.3"  
       - "ns1.dexter.com.br:172.17.0.201"  
       - "proxy.dexter.com.br:172.17.238.5"
+networks:
+  frontend:
+    ipam:
+      config:
+        - subnet: 172.20.0.0/24
 ...
