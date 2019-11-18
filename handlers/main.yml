@@ -1,72 +1,72 @@
 ---
 # handlers file for named
 ## SystemD
-- name: Start {{ service_name }}
+- name: Start bind9
   systemd:
     state: started
-    name: {{ service_name }}.service
+    name: bind9.service
     enabled: yes
     force: yes
   ignore_errors: yes
-  when: 
+  when:
     - ansible_service_mgr == "systemd"
 
-- name: Stop {{ service_name }}
+- name: Stop bind9
   systemd:
     state: stopped
-    name: {{ service_name }}.service
+    name: bind9.service
     enabled: yes
     force: yes
   ignore_errors: yes
-  when: 
-    - ansible_service_mgr == "systemd"
-    
-- name: Restart {{ service_name }}
-  systemd:
-    state: restarted
-    name: {{ service_name }}.service
-    force: yes
-  ignore_errors: yes
-  when: 
+  when:
     - ansible_service_mgr == "systemd"
 
-- name: Reload {{ service_name }}
+- name: Restart bind9
   systemd:
-    state: reloaded
-    name: {{ service_name }}.service
+    state: restarted
+    name: bind9.service
     force: yes
   ignore_errors: yes
-  when: 
-    - ansible_service_mgr == "systemd"     
+  when:
+    - ansible_service_mgr == "systemd"
+
+- name: Reload bind9
+  systemd:
+    state: reloaded
+    name: bind9.service
+    force: yes
+  ignore_errors: yes
+  when:
+    - ansible_service_mgr == "systemd"
 
 ## SystemV
-- name: Start {{ service_name }}
+- name: Start bind9
   service:
     state: started
-    name: {{ service_name }}
+    name: bind9
     enabled: yes
-  when: 
+  when:
     - ansible_service_mgr == "service"
 
-- name: Stop {{ service_name }}
+- name: Stop bind9
   service:
     state: stopped
-    name: {{ service_name }}
+    name: bind9
     enabled: yes
-  when: 
-    - ansible_service_mgr == "service"
-    
-- name: Restart {{ service_name }}
-  service:
-    state: restarted
-    name: {{ service_name }}
-  when: 
+  when:
     - ansible_service_mgr == "service"
 
-- name: Reload {{ service_name }}
+- name: Restart bind9
+  service:
+    state: restarted
+    name: bind9
+  when:
+    - ansible_service_mgr == "service"
+
+- name: Reload bind9
   service:
     state: reloaded
-    name: {{ service_name }}
-  when: 
+    name: bind9
+  when:
     - ansible_service_mgr == "service"
 ...
