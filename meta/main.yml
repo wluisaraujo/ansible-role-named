@@ -1,5 +1,5 @@
 galaxy_info:
-  role_name: named
+#  role_name: named
   author: w.luis.araujo
   description: "Infrastructure as Code (IaC) with Ansible role for Configure Named (DNS) server"
   company: LUSAR | wluisaraujo.github.io
