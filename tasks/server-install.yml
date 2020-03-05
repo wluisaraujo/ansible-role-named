@@ -6,9 +6,7 @@
     name: {{item}} 
     state: latest 
     update_cache: true 
-  with_items: 
-          - bind9
-          - bind9utils
+  with_items: "{{ packages }}" 
   register: bind_installed
   when: ansible_os_family == "Debian"
   notify:

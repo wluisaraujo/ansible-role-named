@@ -5,6 +5,11 @@
       - server is defined
     quiet: true  
 
+# defaults file for vars 
+
+- name: Include os specific vars
+  include_vars: "{{ ansible_os_family }}.yml"
+  
 # defaults file for tasks file for named
 
 - name:  Instala pacotes Base (OS base Debian)
